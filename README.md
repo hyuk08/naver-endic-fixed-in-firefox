@@ -22,7 +22,7 @@
 
 ## PDF에서 사용하기
 
-이전 개발자분이 만드신 애드온 리뷰에, PDF 뷰어에서도 사용 가능하게 해달라는 리뷰를 보고 개발을 시도해보았지만, Firefox에서 PDF를 열면 Firefox 내장 PDF 뷰어로 표시되는데 Firefox는 보안상 확장 기능이 이 뷰어 안에서 동작하지 못하게 막고 있습니다. 그래서 PDF에서는 Alt+클릭이나 드래그만으로 팝업을 띄울 수 없습니다.
+이전 개발자분이 만드신 애드온에 "PDF 뷰어에서도 사용할 수 있게 해 달라"는 리뷰가 있어 개발을 시도해 보았지만, Firefox는 보안상 확장 기능이 내장 PDF 뷰어 안에서 동작하지 못하게 막고 있습니다. 그래서 PDF에서는 Alt+클릭이나 드래그만으로 팝업을 띄울 수 없습니다.
 
 대신 단어를 드래그한 뒤 **우클릭 → "네이버 사전에서 찾기"**를 누르면 작은 창으로 뜻과 발음을 볼 수 있습니다. 이 창은 한 번 띄워 두면 다음 검색 때 다시 사용됩니다.
 
@@ -90,7 +90,7 @@ I saw that the last update was in July 2022. I would like to say thank you for c
 
 ## Using it in PDFs
 
-I saw a review on the add-on made by the previous developer asking for it to work in the PDF viewer too, and tried to develop it. However, when you open a PDF in Firefox, it is shown in Firefox's built-in PDF viewer, and for security reasons Firefox does not allow extensions to run inside this viewer. So in PDFs, the popup cannot be shown just by Alt+click or dragging.
+There was a review on the add-on made by the previous developer saying "Please make it usable in the PDF viewer too", so I tried to develop it, but for security reasons Firefox does not allow extensions to run inside its built-in PDF viewer. So in PDFs, the popup cannot be shown just by Alt+click or dragging.
 
 Instead, drag a word and **right-click → "Look up in Naver Dictionary"** to see its meaning and pronunciation in a small window. Once opened, this window is reused for the next lookup.
 
