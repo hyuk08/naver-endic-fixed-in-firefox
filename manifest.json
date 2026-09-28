@@ -48,6 +48,7 @@
   },
   "permissions": [
     "storage",
+    "contextMenus",
     "*://en.dict.naver.com/*",
     "*://dict-dn.pstatic.net/*"
   ],

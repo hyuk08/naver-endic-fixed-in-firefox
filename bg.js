@@ -72,3 +72,54 @@ browser.runtime.onMessage.addListener((msg) => {
     audio.play().catch((e) => resolve({ error: String(e) }));
   });
 });
+
+// Right-click menu: works where the popup can't be injected (e.g. Firefox's
+// built-in PDF viewer). The result opens in a small window.
+const POPUP_WIDTH = 400;
+const POPUP_HEIGHT = 440;
+const MAX_LOOKUP_LENGTH = 40;
+let lookupWindowId = null;
+
+browser.contextMenus.create({
+  id: 'lookup-selection',
+  title: '네이버 사전에서 찾기: "%s"',
+  contexts: ['selection']
+});
+
+async function openLookupWindow(text) {
+  const url = browser.runtime.getURL('dict.html') + `?text=${encodeURIComponent(text)}`;
+  if (lookupWindowId !== null) {
+    try {
+      // Reuse the window opened by a previous lookup.
+      const win = await browser.windows.get(lookupWindowId, { populate: true });
+      await browser.tabs.update(win.tabs[0].id, { url: url });
+      await browser.windows.update(lookupWindowId, { focused: true });
+      return;
+    } catch (e) {
+      lookupWindowId = null;
+    }
+  }
+  const win = await browser.windows.create({
+    url: url,
+    type: 'popup',
+    width: POPUP_WIDTH,
+    height: POPUP_HEIGHT
+  });
+  lookupWindowId = win.id;
+}
+
+browser.windows.onRemoved.addListener((windowId) => {
+  if (windowId === lookupWindowId) {
+    lookupWindowId = null;
+  }
+});
+
+browser.contextMenus.onClicked.addListener((info) => {
+  if (info.menuItemId !== 'lookup-selection') {
+    return;
+  }
+  const text = (info.selectionText || '').trim().slice(0, MAX_LOOKUP_LENGTH);
+  if (text.length > 0) {
+    openLookupWindow(text);
+  }
+});

@@ -16,6 +16,7 @@
 - 발음 듣기 버튼이 동작하지 않던 문제 수정
 - 옵션 화면 개선: 다크 모드 지원, 기능키를 Ctrl / Alt / Meta 중 하나만 선택
 - 팝업 크기 선택: 고정 크기(길면 스크롤) / 전체 크기(내용만큼 크게)
+- 우클릭 메뉴 "네이버 사전에서 찾기" 추가: Firefox PDF 뷰어에서도 작은 창으로 사전을 볼 수 있습니다.
 - 사전 데이터를 안전한 방식으로 표시하도록 수정 (`innerHTML` 미사용)
 - 한글·공백이 들어간 검색어가 깨지던 문제와 기타 오류 수정
 
@@ -28,6 +29,7 @@
 | 모든 웹 사이트 접근 (필수) | 어떤 사이트에서든 단어를 클릭하거나 드래그했을 때 사전 팝업을 띄우려면 그 페이지에서 동작해야 합니다. 페이지 내용을 읽어 저장하거나 전송하지 않으며, 사용자가 선택한 단어(최대 40자)만 사용합니다. |
 | `en.dict.naver.com` | 선택한 단어의 뜻과 발음을 네이버 영어사전에서 조회합니다. |
 | `dict-dn.pstatic.net` | 네이버 사전의 발음 듣기 음성 파일을 재생합니다. |
+| `contextMenus` | 단어를 선택하고 우클릭했을 때 "네이버 사전에서 찾기" 메뉴를 보여줍니다. PDF 뷰어처럼 팝업을 띄울 수 없는 곳에서 사용합니다. |
 | `storage` | 단어 선택 방법, 기능키 같은 설정을 브라우저 안에 저장합니다. |
 
 - 페이지 내용, 입력한 글, 방문 기록은 수집하지 않습니다.
@@ -74,6 +76,7 @@ I saw that the last update was in July 2022. I would like to say thank you for c
 - Fixed the pronunciation button that did not work
 - Improved options screen: dark mode support, choose only one of Ctrl / Alt / Meta as the modifier key
 - Popup size setting: fixed size (scrolls if long) / full size (as large as the content)
+- Added a right-click menu item "Look up in Naver Dictionary": lets you use the dictionary in a small window even in the Firefox PDF viewer.
 - Dictionary data is now displayed in a safe way (no `innerHTML`)
 - Fixed search terms containing Korean characters or spaces being garbled, and other bugs
 
@@ -86,6 +89,7 @@ When you install it, the permission "Access your data for all websites" is displ
 | Access to all websites (required) | To show the dictionary popup when you click or drag a word on any site, it needs to run on that page. It does not read, store or send page content; it only uses the word you selected (up to 40 characters). |
 | `en.dict.naver.com` | Looks up the meaning and pronunciation of the selected word in the Naver English Dictionary. |
 | `dict-dn.pstatic.net` | Plays the pronunciation audio files of the Naver Dictionary. |
+| `contextMenus` | Shows the "Look up in Naver Dictionary" item when you right-click a selected word. Used where the popup cannot be shown, such as the PDF viewer. |
 | `storage` | Saves settings such as the word selection method and the modifier key inside the browser. |
 
 - It does not collect page content, text you type, or browsing history.
