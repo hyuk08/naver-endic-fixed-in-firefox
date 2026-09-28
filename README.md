@@ -24,7 +24,7 @@
 
 이전 개발자분이 만드신 애드온에 "PDF 뷰어에서도 사용할 수 있게 해 달라"는 리뷰가 있어 개발을 시도해 보았지만, Firefox는 보안상 확장 기능이 내장 PDF 뷰어 안에서 동작하지 못하게 막고 있습니다. 그래서 PDF에서는 Alt+클릭이나 드래그만으로 팝업을 띄울 수 없습니다.
 
-대신 단어를 드래그한 뒤 **우클릭 → "네이버 사전에서 찾기"**를 누르면 작은 창으로 뜻과 발음을 볼 수 있습니다. 이 창은 한 번 띄워 두면 다음 검색 때 다시 사용됩니다.
+대신 단어를 드래그한 뒤 우클릭 → "네이버 사전에서 찾기"를 누르면 작은 창으로 뜻과 발음을 볼 수 있습니다. 이 창은 한 번 띄워 두면 다음 검색 때 다시 사용됩니다.
 
 드래그만으로 바로 찾거나, 열어 둔 창이 드래그할 때마다 자동으로 바뀌게 하는 방법도 찾아봤지만 지금의 Firefox 구조에서는 마땅한 방법을 찾지 못했습니다. (일부 크롬 확장은 "파일 URL 접근 허용" 설정으로 자체 PDF 뷰어를 쓰지만, Firefox에는 이런 설정이 없습니다.) 불편하시겠지만 양해 부탁드리며, 좋은 방법을 아시면 알려주시면 감사하겠습니다.
 
@@ -92,7 +92,7 @@ I saw that the last update was in July 2022. I would like to say thank you for c
 
 There was a review on the add-on made by the previous developer saying "Please make it usable in the PDF viewer too", so I tried to develop it, but for security reasons Firefox does not allow extensions to run inside its built-in PDF viewer. So in PDFs, the popup cannot be shown just by Alt+click or dragging.
 
-Instead, drag a word and **right-click → "Look up in Naver Dictionary"** to see its meaning and pronunciation in a small window. Once opened, this window is reused for the next lookup.
+Instead, drag a word and right-click → "Look up in Naver Dictionary" to see its meaning and pronunciation in a small window. Once opened, this window is reused for the next lookup.
 
 I also looked for a way to look up words just by dragging, or to make an open window update automatically whenever you drag, but could not find a suitable way with the current structure of Firefox. (Some Chrome extensions use their own PDF viewer through the "Allow access to file URLs" setting, but Firefox has no such setting.) Sorry for the inconvenience, and I would be grateful if you let me know if you know a good way.
 
