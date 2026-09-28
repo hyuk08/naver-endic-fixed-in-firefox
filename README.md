@@ -20,6 +20,14 @@
 - 사전 데이터를 안전한 방식으로 표시하도록 수정 (`innerHTML` 미사용)
 - 한글·공백이 들어간 검색어가 깨지던 문제와 기타 오류 수정
 
+## PDF에서 사용하기
+
+Firefox에서 PDF를 열면 Firefox 내장 PDF 뷰어로 표시되는데, Firefox는 보안상 확장 기능이 이 뷰어 안에서 동작하지 못하게 막고 있습니다. 그래서 PDF에서는 Alt+클릭이나 드래그만으로 팝업을 띄울 수 없습니다.
+
+대신 단어를 드래그한 뒤 **우클릭 → "네이버 사전에서 찾기"**를 누르면 작은 창으로 뜻과 발음을 볼 수 있습니다. 이 창은 한 번 띄워 두면 다음 검색 때 다시 사용됩니다.
+
+드래그만으로 바로 찾거나, 열어 둔 창이 드래그할 때마다 자동으로 바뀌게 하는 방법도 찾아봤지만 지금의 Firefox 구조에서는 마땅한 방법을 찾지 못했습니다. (일부 크롬 확장은 "파일 URL 접근 허용" 설정으로 자체 PDF 뷰어를 쓰지만, Firefox에는 이런 설정이 없습니다.) 불편하시겠지만 양해 부탁드리며, 좋은 방법을 아시면 알려주시면 감사하겠습니다.
+
 ## 권한 안내
 
 설치할 때 "모든 웹 사이트에 대한 사용자 데이터에 접근"이라는 권한이 표시됩니다. 걱정되실 수도 있을 것 같아 아래에 이유를 적어 둡니다.
@@ -79,6 +87,14 @@ I saw that the last update was in July 2022. I would like to say thank you for c
 - Added a right-click menu item "Look up in Naver Dictionary": lets you use the dictionary in a small window even in the Firefox PDF viewer.
 - Dictionary data is now displayed in a safe way (no `innerHTML`)
 - Fixed search terms containing Korean characters or spaces being garbled, and other bugs
+
+## Using it in PDFs
+
+When you open a PDF in Firefox, it is shown in Firefox's built-in PDF viewer, and for security reasons Firefox does not allow extensions to run inside this viewer. So in PDFs, the popup cannot be shown just by Alt+click or dragging.
+
+Instead, drag a word and **right-click → "Look up in Naver Dictionary"** to see its meaning and pronunciation in a small window. Once opened, this window is reused for the next lookup.
+
+I also looked for a way to look up words just by dragging, or to make an open window update automatically whenever you drag, but could not find a suitable way with the current structure of Firefox. (Some Chrome extensions use their own PDF viewer through the "Allow access to file URLs" setting, but Firefox has no such setting.) Sorry for the inconvenience, and I would be grateful if you let me know if you know a good way.
 
 ## Permissions
 
