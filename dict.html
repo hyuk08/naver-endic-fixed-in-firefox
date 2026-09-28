@@ -3,41 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <style type="text/css">
+    :root {
+      --fg: #222;
+      --muted: #6b7280;
+      --accent: #03a94d;
+      --border: #e5e7eb;
+    }
     html {
+      overflow-x: hidden;
       margin: 0;
       padding: 0;
-      color: darkslategray;
-      background-color: white;
+      color: var(--fg);
+      background-color: transparent;
     }
     body {
       margin: 0;
-      padding: 0;
-      font-size: 10pt;
+      padding: 4px 2px;
+      font: 13px/1.5 -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      display: inline-block;
+      min-width: 220px;
+      max-width: 380px;
     }
     dl {
-      margin: 6px;
+      margin: 0;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    dt {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    dt strong {
+      color: var(--accent);
     }
     dd {
-      margin-left: 1em;
+      margin: 4px 0 0 0;
     }
     ul {
       margin: 0;
-      padding-left: 0;
-      padding-top: 4px;
+      padding: 0;
       list-style: none;
     }
-    input[type=image] {
+    li {
+      padding: 1px 0;
+    }
+    .pron {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    button.speak {
+      width: 22px;
+      height: 22px;
+      padding: 2px;
+      margin: 0 2px 0 4px;
       vertical-align: middle;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    button.speak:hover {
+      background: #eef2f7;
+      border-color: var(--border);
+    }
+    button.speak.error {
+      background: #fee2e2;
+    }
+    button.speak.playing {
+      background: #dcfce7;
+    }
+    button.speak img {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
     p.naver-link {
-      margin: 6px;
+      margin: 0;
+      padding: 6px 12px 4px;
       text-align: right;
+      font-size: 12px;
+    }
+    p.naver-link a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    p.naver-link a:hover {
+      text-decoration: underline;
+    }
+    .msg {
+      padding: 10px 12px;
+      color: var(--muted);
     }
     .tag {
-      border: 1px solid darkslategray;
+      display: inline-block;
+      background: #f1f5f9;
+      color: var(--muted);
       border-radius: 4px;
-      font-size: 8pt;
-      padding: 0px 2px; 
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.4;
+      padding: 0 5px;
+      margin-right: 2px;
     }
   </style>
 </head>

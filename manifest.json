@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Naver English Dictionary (Unofficial)",
-  "version": "1.1.6",
+  "name": "[수정 버전] Naver English Dictionary (Unofficial)",
+  "version": "1.2.0",
   "description": "찾고싶은 영어 단어를 선택하면 네이버 사전 팝업을 띄워줍니다.",
   "icons": {
     "48": "icons/icon.png",
@@ -15,7 +15,9 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "<all_urls>"
+      ],
       "all_frames": true,
       "js": [
         "config.js",
@@ -34,7 +36,7 @@
   },
   "options_ui": {
     "page": "options.html",
-    "browser_style": true
+    "browser_style": false
   },
   "commands": {
     "toggle-mode": {
@@ -46,15 +48,19 @@
   },
   "permissions": [
     "storage",
-    "webRequest",
-    "*://m.endic.naver.com/*",
-    "*://endic.naver.com/*",
     "*://en.dict.naver.com/*"
   ],
-  "applications": {
+  "author": "khris, hyuk.yk",
+  "homepage_url": "https://github.com/khris/naver-endic-unofficial",
+  "browser_specific_settings": {
     "gecko": {
-      "id": "jid0-4NyOrh90OO8ezy2B2j9O4zgrQdk@jetpack",
-      "strict_min_version": "52.0a1"
+      "id": "naver-endic-unofficial-fixed@hyukyk.dev",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "websiteContent"
+        ]
+      }
     }
   }
 }

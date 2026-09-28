@@ -1,4 +1,5 @@
 const TOOLTIP_ID = '_ext_tooltip_34F75D';
+const MAX_POPUP_HEIGHT = 300;
 
 let prefs = null;
 let ignoreMouseEvent = false;
@@ -11,7 +12,9 @@ browser.storage.local.get('prefs', (rawItem) => {
 });
 
 browser.storage.onChanged.addListener((changes /*, area */) => {
-  prefs = changes.prefs.newValue;
+  if (changes.prefs) {
+    prefs = changes.prefs.newValue;
+  }
 });
 
 let popup = document.createElement('div');
@@ -103,11 +106,11 @@ function createRangeFromPoint(x, y) {
 
   if (document.caretPositionFromPoint) {
     let caretPos = document.caretPositionFromPoint(x, y);
-    textNode = caretPos.offsetNode;
-    offset = caretPos.offset;
     if (caretPos == null) {
       return null;
     }
+    textNode = caretPos.offsetNode;
+    offset = caretPos.offset;
   } else if (document.caretRangeFromPoint) {
     let caretRange = document.caretRangeFromPoint(x, y);
     if (caretRange == null) {
@@ -136,8 +139,11 @@ function showTooltipFromSelection(sel, text) {
 function showTooltip(text, pos) {
   let tooltip = document.createElement('div');
   tooltip.id = TOOLTIP_ID;
-  let dictUrl = browser.runtime.getURL('dict.html') + `?text=${text}`;
-  tooltip.innerHTML = `<iframe style="border: 0" src="${dictUrl}"></iframe>`;
+  let dictUrl = browser.runtime.getURL('dict.html') + `?text=${encodeURIComponent(text)}`;
+  let iframe = document.createElement('iframe');
+  iframe.src = dictUrl;
+  iframe.style.cssText = 'border: 0; width: 260px; height: 60px; display: block; background: transparent; color-scheme: light;';
+  tooltip.appendChild(iframe);
   tooltip.style.setProperty('position', `absolute`, 'important');
   tooltip.style.setProperty('top', `${pos.top}px`, 'important');
   tooltip.style.setProperty('left', `${pos.left}px`, 'important');
@@ -150,13 +156,26 @@ function showTooltip(text, pos) {
   tooltip.style.setProperty('background-color', `white`, 'important');
   tooltip.style.setProperty('color', `darkslategray`, 'important');
   tooltip.style.setProperty('font', `normal 12px sans-serif`, 'important');
-  tooltip.style.setProperty('border', `1px solid darkslategray`, 'important');
-  tooltip.style.setProperty('border-radius', `10px`, 'important');
+  tooltip.style.setProperty('border', `1px solid #d1d5db`, 'important');
+  tooltip.style.setProperty('border-radius', `8px`, 'important');
+  tooltip.style.setProperty('box-shadow', `0 4px 16px rgba(0,0,0,.18)`, 'important');
   tooltip.style.setProperty('margin', `0`, 'important');
-  tooltip.style.setProperty('padding', `5px`, 'important');
-  tooltip.style.setProperty('max-width', `30em`, 'important');
+  tooltip.style.setProperty('padding', `0`, 'important');
+  tooltip.style.setProperty('max-width', `none`, 'important');
   document.body.appendChild(tooltip);  
 }
+
+window.addEventListener('message', (e) => {
+  if (!e.data || e.data.type !== 'naver-endic-size') {
+    return;
+  }
+  let tooltip = document.getElementById(TOOLTIP_ID);
+  let iframe = tooltip && tooltip.querySelector('iframe');
+  if (iframe && e.source === iframe.contentWindow) {
+    iframe.style.width = `${e.data.width}px`;
+    iframe.style.height = `${Math.min(e.data.height, MAX_POPUP_HEIGHT)}px`;
+  }
+});
 
 function hideTooltip() {
   let tooltip = document.getElementById(TOOLTIP_ID);

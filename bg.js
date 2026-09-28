@@ -25,6 +25,9 @@ browser.storage.local.get({
 });
 
 browser.storage.onChanged.addListener((changes, area) => {
+  if (!changes.prefs || !changes.prefs.newValue) {
+    return;
+  }
   const wordSelectMode = changes.prefs.newValue.wordSelectMode;
   initBrowserAction(wordSelectMode);
 });
@@ -47,10 +50,3 @@ browser.commands.onCommand.addListener((cmd) => {
   }
 });
 
-browser.runtime.onInstalled.addListener((details) => {
-  if (details.reason === 'install' || details.reason === 'update') {
-    browser.tabs.create({
-      url: 'https://khris.github.io/naver-endic-unofficial/'
-    })
-  }
-});
