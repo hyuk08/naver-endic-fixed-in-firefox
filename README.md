@@ -51,3 +51,59 @@ Mozilla Public License 2.0. 자세한 내용은 `LICENSE.md`를 참고하세요.
 `icons/speech.png`는 [Google Material Design Icons][0]에서 가져왔습니다.
 
 [0]: https://github.com/google/material-design-icons/
+
+---
+
+# English (translation of the above)
+
+# [Modified Version] Naver English Dictionary (Unofficial)
+
+Select an English word and a Naver Dictionary popup appears.
+
+## About this project
+
+This is a modified version, forked from [khris/naver-endic-unofficial](https://github.com/khris/naver-endic-unofficial) created by [khris](https://github.com/khris). The original author is **khris**, and it follows the same MPL-2.0 license as the original.
+
+### To the original author
+
+I saw that the last update was in July 2022. I would like to say thank you for creating this. If there is any problem, please contact me at contact@hyukyk.dev.
+
+### Changes
+
+- Improved popup UI: the size adjusts to the content, and long content can be scrolled.
+- Fixed the pronunciation button that did not work
+- Improved options screen: dark mode support, choose only one of Ctrl / Alt / Meta as the modifier key
+- Popup size setting: fixed size (scrolls if long) / full size (as large as the content)
+- Dictionary data is now displayed in a safe way (no `innerHTML`)
+- Fixed search terms containing Korean characters or spaces being garbled, and other bugs
+
+## Permissions
+
+When you install it, the permission "Access your data for all websites" is displayed. Since this may be a concern, the reasons are described below.
+
+| Permission | Reason |
+|---|---|
+| Access to all websites (required) | To show the dictionary popup when you click or drag a word on any site, it needs to run on that page. It does not read, store or send page content; it only uses the word you selected (up to 40 characters). |
+| `en.dict.naver.com` | Looks up the meaning and pronunciation of the selected word in the Naver English Dictionary. |
+| `dict-dn.pstatic.net` | Plays the pronunciation audio files of the Naver Dictionary. |
+| `storage` | Saves settings such as the word selection method and the modifier key inside the browser. |
+
+- It does not collect page content, text you type, or browsing history.
+- It does not send any information to the outside other than the selected word. There are no ads or analytics tools.
+- All source code is public, so you can check it yourself.
+
+## Privacy
+
+The selected word is sent to `en.dict.naver.com` to look up its meaning and pronunciation. No other information is collected or sent out. Settings are stored only inside the browser.
+
+This extension is not affiliated with NAVER and has not been approved by NAVER.
+
+## Contact
+
+For bug reports or inquiries, please send them to [GitHub Issues](https://github.com/hyuk08/naver-endic-fixed-in-firefox/issues) or contact@hyukyk.dev.
+
+## License
+
+Mozilla Public License 2.0. See `LICENSE.md` for details.
+
+`icons/speech.png` is taken from [Google Material Design Icons][0].
