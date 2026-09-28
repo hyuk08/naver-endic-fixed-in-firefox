@@ -82,7 +82,8 @@ let lookupWindowId = null;
 
 browser.contextMenus.create({
   id: 'lookup-selection',
-  title: '네이버 사전에서 찾기: "%s"',
+  // "&D" makes D the access key: right-click, then press D.
+  title: '네이버 사전에서 찾기(&D): "%s"',
   contexts: ['selection']
 });
 
