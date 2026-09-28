@@ -48,7 +48,8 @@
   },
   "permissions": [
     "storage",
-    "*://en.dict.naver.com/*"
+    "*://en.dict.naver.com/*",
+    "*://dict-dn.pstatic.net/*"
   ],
   "author": "khris, hyuk.yk",
   "homepage_url": "https://github.com/hyuk08/naver-endic-fixed-in-firefox",
