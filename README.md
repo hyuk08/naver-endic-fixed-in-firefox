@@ -38,6 +38,10 @@
 
 이 확장 기능은 NAVER와 관련이 없으며, NAVER의 승인을 받지 않았습니다.
 
+## 문의
+
+버그 제보나 문의는 [GitHub Issues](https://github.com/hyuk08/naver-endic-fixed-in-firefox/issues) 또는 contact@hyukyk.dev 로 보내주세요.
+
 ## 라이선스
 
 Mozilla Public License 2.0. 자세한 내용은 `LICENSE.md`를 참고하세요.
