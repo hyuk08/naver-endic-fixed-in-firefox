@@ -3,5 +3,6 @@ const defaultPrefs = {
   wordSelectMode: 1,
   useCtrl: false,
   useAlt: true,
-  useMeta: false
+  useMeta: false,
+  popupMode: 'scroll'
 }

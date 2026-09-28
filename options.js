@@ -14,6 +14,10 @@ function selectedModifier(prefs) {
   return MODIFIERS.find((key) => prefs[`use${key}`]) || prefs.lastModifier || 'Alt';
 }
 
+function popupSelect() {
+  return document.querySelector('select[name=popupMode]');
+}
+
 function checkedModifier() {
   const radio = document.querySelector('input[name=modifier]:checked');
   return radio ? radio.value : null;
@@ -39,6 +43,7 @@ function restoreOptions() {
   }).then((results) => {
     const { prefs } = results;
     modeSelect().value = prefs.wordSelectMode;
+    popupSelect().value = prefs.popupMode || defaultPrefs.popupMode;
     updateModifierState(selectedModifier(prefs));
   });
 }
@@ -52,7 +57,8 @@ function saveOptions() {
   }
   const newPrefs = {
     wordSelectMode: modeSelect().value,
-    lastModifier: lastModifier
+    lastModifier: lastModifier,
+    popupMode: popupSelect().value
   };
   for (const key of MODIFIERS) {
     newPrefs[`use${key}`] = (key === chosen);
@@ -68,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     lastModifier = selectedModifier(prefs);
   });
 });
+
+popupSelect().addEventListener('change', saveOptions);
 
 modeSelect().addEventListener('change', () => {
   updateModifierState(lastModifier);

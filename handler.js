@@ -173,7 +173,10 @@ window.addEventListener('message', (e) => {
   let iframe = tooltip && tooltip.querySelector('iframe');
   if (iframe && e.source === iframe.contentWindow) {
     iframe.style.width = `${e.data.width}px`;
-    iframe.style.height = `${Math.min(e.data.height, MAX_POPUP_HEIGHT)}px`;
+    // "scroll": cap the height and scroll inside; "full": show everything.
+    const scroll = !prefs || prefs.popupMode !== 'full';
+    const height = scroll ? Math.min(e.data.height, MAX_POPUP_HEIGHT) : e.data.height;
+    iframe.style.height = `${height}px`;
   }
 });
 
