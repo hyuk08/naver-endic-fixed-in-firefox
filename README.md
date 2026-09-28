@@ -1,6 +1,6 @@
 # [수정 버전] Naver English Dictionary (Unofficial)
 
-찾고싶은 영어 단어를 선택하면 네이버 사전 팝업을 띄워줍니다.
+찾고 싶은 영어 단어를 선택하면 네이버 사전 팝업을 띄워줍니다.
 
 ## 이 프로젝트에 대하여
 
@@ -8,7 +8,7 @@
 
 ### 원작자께
 
-22년 7월에 마지막 업데이트가 있었던 걸로 확인했습니다. 제작해주셔서 감사하다는 말씀 드립니다. 혹시 문제가 있을 경우 contact@hyukyk.dev로 연락 주시면 감사드리겠습니다.
+22년 7월에 마지막 업데이트가 있었던 걸로 확인했습니다. 제작해주셔서 감사하다는 말씀드립니다. 혹시 문제가 있을 경우 contact@hyukyk.dev로 연락 주시면 감사드리겠습니다.
 
 ### 변경 사항
 
@@ -22,7 +22,7 @@
 
 ## PDF에서 사용하기
 
-Firefox에서 PDF를 열면 Firefox 내장 PDF 뷰어로 표시되는데, Firefox는 보안상 확장 기능이 이 뷰어 안에서 동작하지 못하게 막고 있습니다. 그래서 PDF에서는 Alt+클릭이나 드래그만으로 팝업을 띄울 수 없습니다.
+이전 개발자분이 만드신 애드온 리뷰에, PDF 뷰어에서도 사용 가능하게 해달라는 리뷰를 보고 개발을 시도해보았지만, Firefox에서 PDF를 열면 Firefox 내장 PDF 뷰어로 표시되는데 Firefox는 보안상 확장 기능이 이 뷰어 안에서 동작하지 못하게 막고 있습니다. 그래서 PDF에서는 Alt+클릭이나 드래그만으로 팝업을 띄울 수 없습니다.
 
 대신 단어를 드래그한 뒤 **우클릭 → "네이버 사전에서 찾기"**를 누르면 작은 창으로 뜻과 발음을 볼 수 있습니다. 이 창은 한 번 띄워 두면 다음 검색 때 다시 사용됩니다.
 
@@ -52,7 +52,7 @@ Firefox에서 PDF를 열면 Firefox 내장 PDF 뷰어로 표시되는데, Firefo
 
 ## 문의
 
-버그 제보나 문의는 [GitHub Issues](https://github.com/hyuk08/naver-endic-fixed-in-firefox/issues) 또는 contact@hyukyk.dev 로 보내주세요.
+버그 제보나 문의는 [GitHub Issues](https://github.com/hyuk08/naver-endic-fixed-in-firefox/issues) 또는 contact@hyukyk.dev로 보내주세요.
 
 ## 라이선스
 
@@ -90,7 +90,7 @@ I saw that the last update was in July 2022. I would like to say thank you for c
 
 ## Using it in PDFs
 
-When you open a PDF in Firefox, it is shown in Firefox's built-in PDF viewer, and for security reasons Firefox does not allow extensions to run inside this viewer. So in PDFs, the popup cannot be shown just by Alt+click or dragging.
+I saw a review on the add-on made by the previous developer asking for it to work in the PDF viewer too, and tried to develop it. However, when you open a PDF in Firefox, it is shown in Firefox's built-in PDF viewer, and for security reasons Firefox does not allow extensions to run inside this viewer. So in PDFs, the popup cannot be shown just by Alt+click or dragging.
 
 Instead, drag a word and **right-click → "Look up in Naver Dictionary"** to see its meaning and pronunciation in a small window. Once opened, this window is reused for the next lookup.
 
