@@ -50,3 +50,25 @@ browser.commands.onCommand.addListener((cmd) => {
   }
 });
 
+
+let pronounceAudio = null;
+
+browser.runtime.onMessage.addListener((msg) => {
+  if (!msg || msg.type !== 'play-pronounce') {
+    return undefined;
+  }
+  if (pronounceAudio) {
+    pronounceAudio.pause();
+  }
+  const audio = new Audio(msg.url);
+  pronounceAudio = audio;
+  return new Promise((resolve) => {
+    audio.addEventListener('ended', () => resolve({}));
+    audio.addEventListener('pause', () => resolve({}));
+    audio.addEventListener('error', () => {
+      const code = audio.error ? audio.error.code : '?';
+      resolve({ error: `audio error ${code}` });
+    });
+    audio.play().catch((e) => resolve({ error: String(e) }));
+  });
+});
