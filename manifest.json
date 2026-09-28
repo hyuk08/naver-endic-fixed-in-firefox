@@ -51,7 +51,7 @@
     "*://en.dict.naver.com/*"
   ],
   "author": "khris, hyuk.yk",
-  "homepage_url": "https://github.com/khris/naver-endic-unofficial",
+  "homepage_url": "https://github.com/hyuk08/naver-endic-fixed-in-firefox",
   "browser_specific_settings": {
     "gecko": {
       "id": "naver-endic-unofficial-fixed@hyukyk.dev",
