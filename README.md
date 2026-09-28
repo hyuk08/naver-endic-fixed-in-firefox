@@ -4,7 +4,7 @@
 
 ## 이 프로젝트에 대하여
 
-[khris](https://github.com/khris)가 만든 [khris/naver-endic-unofficial](https://github.com/khris/naver-endic-unofficial)을 fork하여 수정한 버전입니다. 원작자는 **khris**이며, 원본과 마찬가지로 MPL-2.0 라이선스를 따릅니다.
+[khris](https://github.com/khris)님이 만드신 [khris/naver-endic-unofficial](https://github.com/khris/naver-endic-unofficial)을 fork하여 수정한 버전입니다. 원작자는 **khris**이며, 원본과 마찬가지로 MPL-2.0 라이선스를 따릅니다.
 
 ### 원작자께
 
