@@ -6,10 +6,6 @@
 
 [khris](https://github.com/khris)님이 만드신 [khris/naver-endic-unofficial](https://github.com/khris/naver-endic-unofficial)을 fork하여 수정한 버전입니다. 원작자는 **khris**이며, 원본과 마찬가지로 MPL-2.0 라이선스를 따릅니다.
 
-### 원작자께
-
-22년 7월에 마지막 업데이트가 있었던 걸로 확인했습니다. 제작해주셔서 감사하다는 말씀드립니다. 혹시 문제가 있을 경우 contact@hyukyk.dev로 연락 주시면 감사드리겠습니다.
-
 ### 변경 사항
 
 - 팝업 UI 개선: 내용에 맞춰 크기가 조절되고, 길면 스크롤로 내려볼 수 있습니다.
@@ -61,6 +57,10 @@ Mozilla Public License 2.0. 자세한 내용은 `LICENSE.md`를 참고하세요.
 `icons/speech.png`는 [Google Material Design Icons][0]에서 가져왔습니다.
 
 [0]: https://github.com/google/material-design-icons/
+
+### 원작자께
+
+22년 7월에 마지막 업데이트가 있었던 걸로 확인했습니다. 제작해주셔서 감사하다는 말씀드립니다. 혹시 문제가 있을 경우 contact@hyukyk.dev로 연락 주시면 감사드리겠습니다.
 
 ---
 
